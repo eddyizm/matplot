@@ -1,0 +1,11 @@
+from matplotlib import pyplot as plt
+x = range(30,60)
+y1 = range(30)
+y2 = range(50,80)
+plt.plot(x, y1, color= 'pink', marker = 'o')
+plt.plot(x,y2, color= 'gray', marker = 'o')
+plt.title('Two Lines on One Graph')
+plt.xlabel('Amazing X-axis')
+plt.ylabel('Incredible Y-axis')
+plt.legend(x, loc=4)
+plt.show()
