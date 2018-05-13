@@ -12,4 +12,13 @@ blood_limes_per_month = [75.0, 75.0, 76.0, 71.0, 74.0, 77.0, 69.0, 80.0, 63.0, 6
 
 # create your figure here
 plt.figure(figsize=(12,8))
+ax1 = plt.subplot(1,2,1)
+x_values = range(len(months))
+ax1.plot(x_values, visits_per_month, marker='o')
+ax1.set_xlabel("Month")
+ax1.set_ylabel("Visits Per Month")
+ax1.set_xticks(x_values)
+ax1.set_xticklabels(months)
+
+ax2 = plt.subplot(1,2,2)
 plt.show()
