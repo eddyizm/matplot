@@ -19,9 +19,20 @@ ax1.set_xlabel("Month")
 ax1.set_ylabel("Visits Per Month")
 ax1.set_xticks(x_values)
 ax1.set_xticklabels(months)
+ax1.title.set_text('Monthly Visitors')
+
 
 ax2 = plt.subplot(1,2,2)
-ax2.plot(x_values, key_limes_per_month, marker='o')
-ax2.plot(x_values, persian_limes_per_month, marker='o')
-ax2.plot(x_values, blood_limes_per_month, marker='o')
+ax2.plot(x_values, key_limes_per_month, marker='o', color='red')
+ax2.plot(x_values, persian_limes_per_month, marker='o', color='purple')
+ax2.plot(x_values, blood_limes_per_month, marker='o', color='green')
+legend_labels = ['Key Limes', 'Persian Limes', 'Blood Limes']
+ax2.legend(legend_labels)
+ax2.set_xticks(x_values)
+ax2.set_xticklabels(months)
+ax2.set_xlabel('Month')
+ax2.set_ylabel('Sales Per Month')
+ax2.title.set_text('Monthly Sales by Lime')
+plt.savefig('SublimeLimeGraphs/sublime_charts.png')
+
 plt.show()
