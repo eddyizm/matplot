@@ -21,4 +21,7 @@ ax1.set_xticks(x_values)
 ax1.set_xticklabels(months)
 
 ax2 = plt.subplot(1,2,2)
+ax2.plot(x_values, key_limes_per_month, marker='o')
+ax2.plot(x_values, persian_limes_per_month, marker='o')
+ax2.plot(x_values, blood_limes_per_month, marker='o')
 plt.show()
