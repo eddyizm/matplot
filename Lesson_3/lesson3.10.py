@@ -16,4 +16,5 @@ ax.set_xticks(months)
 ax.set_xticklabels(month_names)
 ax.set_yticks([0.10, 0.25, 0.5, 0.75])
 ax.set_yticklabels(['10%', '25%', '50%', '75%'])
+
 plt.show()
