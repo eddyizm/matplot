@@ -86,11 +86,19 @@ plt.fill_between(months, y_lower, y_upper, alpha=0.2)
 plt.plot(months, revenue)
 plt.show()
 '''
-# 8/12 Pie Chart
+# 8/12 Pie Chart & 9/12 Pie Chart Labeling
 from matplotlib import pyplot as plt
 import numpy as np
 # budget_data = [500, 1000, 750, 300, 100]
+# budget_categories = ['marketing', 'payroll', 'engineering', 'design', 'misc']
+# plt.legend(budget_categories)
 
+# option 2 - This puts the category names into labels next to each corresponding slice:
+# plt.pie(budget_data, labels=budget_categories)
+# option 3 - add percentage
+# plt.pie(budget_data,
+#         labels=budget_categories,
+#         autopct='%0.1f%%')
 # plt.pie(budget_data)
 # plt.axis('equal')
 # plt.show()
@@ -98,6 +106,7 @@ payment_method_names = ["Card Swipe", "Cash", "Apple Pay", "Other"]
 payment_method_freqs = [270, 77, 32, 11]
 
 #make your pie chart here
-plt.pie(payment_method_freqs)
+plt.pie(payment_method_freqs, autopct='%0.1f%%')
 plt.axis('equal')
+plt.legend(payment_method_names)
 plt.show()
