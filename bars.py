@@ -85,7 +85,7 @@ ax.set_xticklabels(month_names)
 plt.fill_between(months, y_lower, y_upper, alpha=0.2)
 plt.plot(months, revenue)
 plt.show()
-'''
+
 # 8/12 Pie Chart & 9/12 Pie Chart Labeling
 from matplotlib import pyplot as plt
 import numpy as np
@@ -110,3 +110,27 @@ plt.pie(payment_method_freqs, autopct='%0.1f%%')
 plt.axis('equal')
 plt.legend(payment_method_names)
 plt.show()
+'''
+# 10/12 Histogram 11/12 Multiple Histograms
+from matplotlib import pyplot as plt
+from script import sales_times
+# plt.hist(dataset, range=(66,69), bins=40)
+#create the histogram here
+plt.hist(sales_times, bins=20)
+plt.hist(sales_times1, bins=20, alpha=0.4, normed=True)
+#plot your other histogram here
+plt.hist(sales_times2, bins=20, alpha=0.4,normed=True)
+plt.show()
+
+Review
+In helping MatplotSip visualize their data, you’ve learned a bunch of new plot types that you can use in Matplotlib. Congratulations on adding these new plotting abilities to your repertoire:
+
+How to compare categories of data with bar graphs
+Add error bars to graphs
+Use fill_between to display shaded error on line graphs
+Create stacked bar graphs for easier comparisons
+Create side-by-side bar graphs
+Create and format pie charts to compare proportional datasets
+Analyze frequency data using histograms, including multiple histograms on the same plot
+Normalize histograms
+In the upcoming project, you will experiment with these different plot types and how to best use them to find patterns or trends in a new data set.
