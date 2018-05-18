@@ -1,4 +1,4 @@
-'''
+
 from matplotlib import pyplot as plt
 drinks = ["cappuccino", "latte", "chai", "americano", "mocha", "espresso"]
 sales =  [91, 76, 56, 66, 52, 27]
@@ -110,7 +110,7 @@ plt.pie(payment_method_freqs, autopct='%0.1f%%')
 plt.axis('equal')
 plt.legend(payment_method_names)
 plt.show()
-'''
+
 # 10/12 Histogram 11/12 Multiple Histograms
 from matplotlib import pyplot as plt
 from script import sales_times
