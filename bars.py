@@ -60,7 +60,7 @@ error = [0.6, 0.9, 0.4, 0, 0.9, 0]
 # Plot the bar graph here
 plt.bar(range(len(ounces_of_milk)), ounces_of_milk, yerr=error, capsize=5)
 plt.show()
-'''
+
 # 7/12 Fill Between
 from matplotlib import pyplot as plt
 # x_values = range(10)
@@ -84,4 +84,20 @@ ax.set_xticks(months)
 ax.set_xticklabels(month_names)
 plt.fill_between(months, y_lower, y_upper, alpha=0.2)
 plt.plot(months, revenue)
+plt.show()
+'''
+# 8/12 Pie Chart
+from matplotlib import pyplot as plt
+import numpy as np
+# budget_data = [500, 1000, 750, 300, 100]
+
+# plt.pie(budget_data)
+# plt.axis('equal')
+# plt.show()
+payment_method_names = ["Card Swipe", "Cash", "Apple Pay", "Other"]
+payment_method_freqs = [270, 77, 32, 11]
+
+#make your pie chart here
+plt.pie(payment_method_freqs)
+plt.axis('equal')
 plt.show()
