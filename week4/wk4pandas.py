@@ -134,4 +134,9 @@ print(df3)
 orders = pd.read_csv('week4\shoefly.csv')
 #print (orders.head())
 emails = orders.email
-print(emails)
+# print(emails)
+# frances_palmer = orders[(orders.first_name == 'frances') & (orders.last_name == 'palmer')]
+frances_palmer = orders[orders.first_name == 'Frances'] 
+#print (frances_palmer)
+comfy_shoes = orders[(orders.shoe_type == 'clogs') | (orders.shoe_type == 'boots') | (orders.shoe_type == 'ballet flats') ]
+print(comfy_shoes)
