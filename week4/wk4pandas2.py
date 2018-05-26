@@ -41,3 +41,10 @@ df = pd.DataFrame([
 # Add columns here
 df['Lowercase Name'] = df['Name'].str.lower()
 print(df)
+# Renaming Columns
+# must rename all columns when using this method
+df.columns = ['Full Name', 'Email Address', 'Name in lowerCase']
+print(df)
+# Renaming Columns II
+df.rename(columns={'Full Name':'Tuple bitch!'}, inplace=True)
+print(df)
