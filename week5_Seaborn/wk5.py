@@ -26,5 +26,8 @@ print(assignment1)
 asn1_median = np.median(assignment1.grade)
 print(asn1_median)
 
-plt.show()
+gradebook = pd.read_csv("gradebook.csv")
 
+sns.barplot(data=gradebook, x="assignment_name", y="grade")
+
+plt.show()
