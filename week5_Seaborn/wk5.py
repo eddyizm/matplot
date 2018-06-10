@@ -27,3 +27,4 @@ asn1_median = np.median(assignment1.grade)
 print(asn1_median)
 
 plt.show()
+
