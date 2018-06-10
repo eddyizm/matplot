@@ -159,7 +159,7 @@ female
 # In[ ]:
 
 
-el salvador
+print ('el salvador')
 
 
 # Based on the data, what kind of recommendations can you make to Kiva about the loans they give?
@@ -255,7 +255,7 @@ sns.boxplot(data=df,  x="country", y="loan_amount")
 # In[10]:
 
 
-print 'el salvador'
+print ('el salvador')
 
 
 # In which country would you be most likely to receive the largest loan amount?
@@ -263,7 +263,7 @@ print 'el salvador'
 # In[11]:
 
 
-print 'cambodia'
+print ('cambodia')
 
 
 # ## Step 8: Box Plot by Activity
