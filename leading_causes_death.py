@@ -7,44 +7,61 @@ import seaborn as sns
 
 df = pd.read_csv('env/NCHS_-_Leading_Causes_of_Death__United_States.csv')
 # print (df.head())
-# 
-# 
+#  
 df_removed =  df[df['Cause Name'] != 'All Causes']           
 df_top = df_removed.nlargest(10,columns='Deaths')
-# print (df_top.info())
+df_s = df_removed[(df_removed['Cause Name'] == 'Suicide') & (df_removed['Cause Name'] != 'All Causes')]
+print (df_s.head(50))
 #print (df_top.head(10))
 #df_ca = df_removed[df['Cause Name'] != 'All Causes'  df['State'] == 'California']
 df_ca = df_removed[(df_removed['State'] == 'California')]
-print (df_ca.head())
+#print (df_ca.head())
 
 #styling
-# sns.set_context('notebook', font_scale=1.0)
-# sns.set_palette('Set3')
-# sns.set_style('darkgrid')
+sns.set_context('notebook', font_scale=1.0)
+sns.set_palette('Set3')
+sns.set_style('darkgrid')
 
-# f, ax = plt.subplots(figsize=(20,10))
-# ax = sns.barplot( data= df_removed ,
-#                    x='Cause Name',
-#                    y='Deaths', 
-#                    ci=None )
-# ax.set_title('Top Causes of Deaths In the US (1999-2015)')  
-# for item in ax.get_xticklabels():
-#     item.set_rotation(-45)
-
-# more styling 
-sns.set_palette('Set1')
-sns.set_context('poster', font_scale=1.0)
-sns.set_style('whitegrid')
-
-f, ax2 = plt.subplots(figsize=(20,10))
-ax2 = sns.barplot( data= df_ca ,
+f, ax = plt.subplots(figsize=(15,5))
+ax = sns.barplot( data= df_removed ,
                    x='Cause Name',
                    y='Deaths', 
                    ci=None )
-#ax.set_title('Total Deaths In the US')  
+ax.set_title('Top Causes of Deaths In the US (1999-2015)')  
+for item in ax.get_xticklabels():
+    item.set_rotation(-80)
+ax.set_title('Total Deaths In the US')  
+
+# more styling 
+sns.set_palette('deep')
+sns.set_context('talk', font_scale=0.8)
+sns.set_style("ticks")
+sns.set_style('whitegrid')
+
+f, ax2 = plt.subplots(figsize=(15,5))
+ax2 = sns.stripplot( data= df_ca ,
+                   x='Cause Name',
+                   y='Deaths')
+                   #ci=None )
+ax2.set_title('Deaths in California')  
 
 for item in ax2.get_xticklabels():
-    item.set_rotation(-45)
+    item.set_rotation(-80)
+sns.despine()
+
+
+# suicide plot
+# styling
+sns.set_context('talk', font_scale=0.8)
+sns.set_palette('pastel')
+sns.set_style('darkgrid')
+
+f, ax3 = plt.subplots(figsize=(15,5))
+ax3 = sns.barplot( data= df_s ,
+                   x='Year',
+                   y='Deaths', hue='Cause Name',
+                   ci=None )
+ax3.set_title('Suicide in United States')
 
 plt.show()
 
