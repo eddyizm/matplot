@@ -6,36 +6,46 @@ import numpy as np
 import seaborn as sns
 
 df = pd.read_csv('env/NCHS_-_Leading_Causes_of_Death__United_States.csv')
-print (df.head())
-# >>> s = pd.Series(np.random.randn(10**6))
-# >>> s.nlargest(10)  # only sorts up to the N requested
+# print (df.head())
+# 
+# 
 df_removed =  df[df['Cause Name'] != 'All Causes']           
 df_top = df_removed.nlargest(10,columns='Deaths')
-print (df_top.info())
-print (df_top.head(10))
+# print (df_top.info())
+#print (df_top.head(10))
+#df_ca = df_removed[df['Cause Name'] != 'All Causes'  df['State'] == 'California']
+df_ca = df_removed[(df_removed['State'] == 'California')]
+print (df_ca.head())
 
 #styling
-sns.set_context('notebook', font_scale=1.0)
-sns.set_palette('Set3')
-sns.set_style('darkgrid')
-f, ax = plt.subplots(figsize=(20,10))
-ax = sns.barplot( data= df_removed ,
+# sns.set_context('notebook', font_scale=1.0)
+# sns.set_palette('Set3')
+# sns.set_style('darkgrid')
+
+# f, ax = plt.subplots(figsize=(20,10))
+# ax = sns.barplot( data= df_removed ,
+#                    x='Cause Name',
+#                    y='Deaths', 
+#                    ci=None )
+# ax.set_title('Top Causes of Deaths In the US (1999-2015)')  
+# for item in ax.get_xticklabels():
+#     item.set_rotation(-45)
+
+# more styling 
+sns.set_palette('Set1')
+sns.set_context('poster', font_scale=1.0)
+sns.set_style('whitegrid')
+
+f, ax2 = plt.subplots(figsize=(20,10))
+ax2 = sns.barplot( data= df_ca ,
                    x='Cause Name',
                    y='Deaths', 
                    ci=None )
-# ax = sns.boxplot( data= df_removed ,
-#                    x='Cause Name',
-#                    y='Deaths'
-#                     )
-
-ax.set_title('Top Causes of Deaths In the US (1999-2015)')  
-# ax = sns.barplot( data= df ,
-#                    x='Year',
-#                    y='Deaths',
-#                    ci=None )
 #ax.set_title('Total Deaths In the US')  
-for item in ax.get_xticklabels():
+
+for item in ax2.get_xticklabels():
     item.set_rotation(-45)
+
 plt.show()
 
 ''' pandas exploration
