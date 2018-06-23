@@ -178,7 +178,7 @@ print(netflix_stocks_quarterly.head())
 # 
 
 # In[25]:
-
+'''
 
 # sns.barplot(data=df, x ='country', y='loan_amount')
 ax = sns.violinplot(data = netflix_stocks_quarterly, x='Quarter', y='Price')
@@ -227,8 +227,9 @@ plt.scatter(x_positions,earnings_estimate, c='blue',alpha=0.5)
 plt.legend(["Actual", "Estimate"])
 plt.xticks(x_positions, chart_labels)
 plt.title('Earnings Per Share in Cents')
+plt.show()
 plt.savefig('ear-cents.png')
-
+'''
 
 # ## Graph Literacy
 # 
