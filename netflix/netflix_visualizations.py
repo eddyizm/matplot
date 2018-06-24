@@ -178,7 +178,7 @@ print(netflix_stocks_quarterly.head())
 # 
 
 # In[25]:
-'''
+
 
 # sns.barplot(data=df, x ='country', y='loan_amount')
 ax = sns.violinplot(data = netflix_stocks_quarterly, x='Quarter', y='Price')
@@ -229,7 +229,7 @@ plt.xticks(x_positions, chart_labels)
 plt.title('Earnings Per Share in Cents')
 plt.show()
 plt.savefig('ear-cents.png')
-'''
+
 
 # ## Graph Literacy
 # 
@@ -339,7 +339,7 @@ ax1.set_ylabel('Stock Price')
 ax1.plot(netflix_stocks['Date'], netflix_stocks['Price'])
 ax1.grid(ls='dotted')
 ax1.set_xticklabels(netflix_stocks['Date'],rotation=-80)
-#plt.xticks(x, labels, rotation='vertical')
+
 
 # Right plot Dow Jones
 # ax2 = plt.subplot(total number rows, total number columns, index of subplot to modify)
@@ -352,7 +352,6 @@ ax2.set_xticklabels(dowjones_stocks['Date'],rotation=-80)
 ax2.grid(ls = 'dotted')
 plt.subplots_adjust(wspace=.5)
 plt.show()
-
 plt.savefig('n-d.png')
 
 
